@@ -9,6 +9,8 @@ divEl.innerHTML = `
 console.log(divEl.nodeName, divEl.cloneNode(true));
 
 // --- write some code ---
+divEl.querySelector('a').href = '#top'
+divEl.children[0].querySelector('button').innerHTML = 'to the top';
 
 // --- --- --- --- --- ---
 

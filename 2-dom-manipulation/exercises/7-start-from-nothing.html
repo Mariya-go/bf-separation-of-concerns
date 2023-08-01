@@ -31,7 +31,7 @@
                         <li>
                             <a
                                 href="https://www.badgerbadgerbadger.com"
-                                expected="_blank"
+                                target="_blank"
                                 >learn about badgers</a
                             >
                         </li>
@@ -46,6 +46,52 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+                    // create title h2
+                    const title = document.createElement('h2');
+                    title.innerText = 'a list of things';
+
+                    // append title to div 'actual'
+                    const actual = document.getElementById('actual');
+                    actual.append(title);
+
+                    // create ul
+                    const list = document.createElement('ul');
+                    list.setAttribute('start', '0');
+
+                    const dataOfList = [
+                        {
+                            text: 'robots',
+                        },
+                        {
+                            text: 'solar systems',
+                        },
+                        {
+                            href: 'https://www.badgerbadgerbadger.com',
+                            target: '_blank',
+                            title: 'learn about badgers',
+                        },
+                        {
+                            text: 'oil',
+                        },
+                    ];
+
+                    dataOfList.forEach((element) => {
+                        const itemOfList = document.createElement('li');
+
+                        if (element.text) {
+                            itemOfList.innerText = element.text;
+                        } else {
+                            const childLink = document.createElement('a');
+                            childLink.href = element.href;
+                            childLink.target = element.target;
+                            childLink.innerText = element.title;
+
+                            itemOfList.append(childLink);
+                        }
+
+                        list.append(itemOfList);
+                    });
+                    actual.append(list);
                 </script>
             </div>
 

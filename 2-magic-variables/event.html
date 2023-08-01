@@ -13,7 +13,7 @@
 
         <script id="data">
             // what happens if you uncomment this line?
-            // const event = 'hi';
+            const event = 'hi';
         </script>
 
         <script id="handlers">
@@ -32,7 +32,7 @@
 
             document
                 .getElementById('click-it')
-                .addEventListener('click', parameterEvent);
+                .addEventListener('click', (e) => {parameterEvent(e)});
         </script>
     </body>
 </html>

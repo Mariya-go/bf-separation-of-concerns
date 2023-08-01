@@ -26,7 +26,7 @@
                 <div id="expected">
                     <a
                         href="https://www.badgerbadgerbadger.com"
-                        expected="_blank"
+                        target="_blank"
                         >learn about badgers</a
                     >
                 </div>
@@ -34,7 +34,7 @@
                 <div id="actual">
                     <a
                         href="https://www.badgerbadgerbadger.com"
-                        expected="blank"
+                        target="blank"
                         >learn about pigs</a
                     >
                 </div>
@@ -44,6 +44,7 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+                    document.querySelector('#actual a').innerText = "learn about badgers"
                 </script>
             </div>
 

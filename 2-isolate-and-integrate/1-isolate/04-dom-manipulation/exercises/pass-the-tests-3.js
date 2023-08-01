@@ -12,7 +12,20 @@ divEl.innerHTML = `
 console.log(divEl.nodeName + ' (before)', divEl.cloneNode(true));
 
 // --- write some code ---
-//  you want to create a 2x2 table with a, b, c, d in the squares
+//  you need to create a 2x2 table with a, b, c, d in the squares
+const tdEl = document.createElement('td');
+const cloneTd = tdEl.cloneNode(true);
+const cloneTd1 = tdEl.cloneNode(true);
+const cloneTd2 = tdEl.cloneNode(true);
+
+const tbodyEl = divEl.children[0].children[0];
+tbodyEl.children[0].append(tdEl, cloneTd);
+tbodyEl.children[1].append(cloneTd1, cloneTd2)
+
+tbodyEl.children[0].children[0].innerHTML = 'a';
+tbodyEl.children[0].children[1].innerHTML = 'b';
+tbodyEl.children[1].children[0].innerHTML = 'c';
+tbodyEl.children[1].children[1].innerHTML = 'd';
 
 // --- --- --- --- --- ---
 
