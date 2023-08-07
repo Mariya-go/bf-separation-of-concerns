@@ -1,13 +1,17 @@
-import { gameBaord } from './game-board.js';
+/**
+ * @jest-environment jsdom
+ */
 
-describe('gameBaord: renders a list of user screen names and real names', () => {
+import gameBoard from './game-board.js';
+
+describe('gameBoard: renders a list of user screen names and real names', () => {
     describe('tictactoe: X won on the middle column', () => {
         const boardData = [
             ['O', 'X', 'X'],
             ['X', 'X', 'O'],
             ['O', 'X', 'O'],
         ];
-        const actual = gameBaord(boardData);
+        const actual = gameBoard(boardData);
 
         testGameBoard(actual, boardData);
     });
@@ -21,7 +25,7 @@ describe('gameBaord: renders a list of user screen names and real names', () => 
             ['', ''],
             ['', ''],
         ];
-        const actual = gameBaord(boardData);
+        const actual = gameBoard(boardData);
 
         testGameBoard(actual, boardData);
     });
@@ -31,7 +35,7 @@ describe('gameBaord: renders a list of user screen names and real names', () => 
             ['p', 'l', 'a', 'y'],
             ['b', 'a', 'l', 'l'],
         ];
-        const actual = gameBaord(boardData);
+        const actual = gameBoard(boardData);
 
         testGameBoard(actual, boardData);
     });
